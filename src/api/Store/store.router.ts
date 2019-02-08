@@ -26,6 +26,7 @@ export class StoreRouter {
     this.router.get("/:storeId", StoreController.getStoreByStoreId);
     this.router.get("/:circleId/circle", StoreController.getStoreByCircleId);
     this.router.get("/:centerId", StoreController.getStoreByCenterId);
+    this.router.post("/upload", StoreController.uploadImage);
     //>>>>>>> Update Routes//
     // NOTE ->
     //These Routes Update store data by center,circle and store

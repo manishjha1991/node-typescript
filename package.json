@@ -27,6 +27,7 @@
     "@types/request": "^2.48.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
+    "busboy": "^0.3.0",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
     "csv-parse": "^4.3.1",

@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import * as _ from "lodash";
+import * as path from "path";
 import { login, post, sendMessageToStoreManager } from "../../utils/action";
 import Model from "../Store/store.model";
 import BrowserModel from "../Browser/browser.model";
@@ -463,12 +464,13 @@ export default class StoreController {
   ) {
     let imageFile = req.files.file;
     let filename = req.files.file.name;
-    imageFile.mv(`${__dirname}/public/${filename}`, function(err) {
+    let configFile = path.join(__dirname, "../..");
+    imageFile.mv(`${configFile}/public/${filename}`, function(err) {
       if (err) {
         res.send(failure(err));
+      } else {
+        res.send(success({ file: `public/${filename}` }));
       }
-
-      res.send(success({ file: `public/${filename}` }));
     });
   }
 }
