@@ -127,8 +127,11 @@ export default class StoreController {
       let centerId = req.params.centerId;
       //
       // Get data
-      let result = await Model.find({ centerId: centerId }, { _id: 0 }).exec();
-
+      let getCircle = await Model.find(
+        { centerId: centerId },
+        { _id: 0 }
+      ).exec();
+      const result = _.uniqBy(getCircle, "circleId");
       //
       // Response
       res.send(success(result));
@@ -244,8 +247,9 @@ export default class StoreController {
       let circleId = req.params.circleId;
       //
       // GET Store By circleId
-      let result = await Model.find({ circleId: circleId }).exec();
+      let getStoreByCircleId = await Model.find({ circleId: circleId }).exec();
 
+      const result = _.uniqBy(getStoreByCircleId, "storeId");
       //
       // Response
       res.send(success(result));

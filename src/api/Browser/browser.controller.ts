@@ -13,7 +13,7 @@ export default class BrowserController {
     try {
       //
       // Get data
-      let result = await Model.find().exec();
+      let result = await Model.distinct("browserName").exec();
 
       //
       // Response
@@ -43,7 +43,7 @@ export default class BrowserController {
       let groupId = req.params.groupId;
       //
       // GET Browser By GroupId
-      let result = await Model.find({ browserId: groupId }).exec();
+      let result = await Model.find({ browserGroupId: groupId }).exec();
       //
       // Response
       res.send(success(result));

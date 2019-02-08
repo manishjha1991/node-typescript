@@ -8,6 +8,7 @@ import AppRouter from "../api/App/app.router";
 import BrowserRouter from "../api/Browser/browser.router";
 import CenterRouter from "../api/Center/center.router";
 import StoreRouter from "../api/Store/store.router";
+import GroupRouter from "../api/Group/group.router";
 /*--------  Start CronJob  --------*/
 cron.schedule("* * * * *", async function() {
   const checkNetWorkStatusDate: any = await Model.find(
@@ -75,7 +76,7 @@ export default class Routes {
     this.app.use("/api/browser", BrowserRouter);
     this.app.use("/api/center", CenterRouter);
     this.app.use("/api/store", StoreRouter);
-
+    this.app.use("/api/group", GroupRouter);
     /*--------  Main routes  --------*/
 
     //
