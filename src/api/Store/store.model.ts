@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import  uuid from "uuid";
+import uuid from "uuid";
 let schema: Schema = new Schema(
   {
     storeId: { type: String, default: null },
@@ -8,7 +8,7 @@ let schema: Schema = new Schema(
     groupName: { type: String, default: null },
     olmId: { type: String, default: null },
     deviceId: { type: String, default: null },
-    
+
     sqliteDbLink: {
       dbLink: { type: String, default: null },
       appVersion: { type: String, default: 1 }
@@ -17,15 +17,16 @@ let schema: Schema = new Schema(
       videoLink: String,
       isActive: { type: Boolean, default: true }
     },
-    wallpaper : { type: String, default: null },
+    wallpaper: { type: String, default: null },
     selectedApps: {
       type: Array,
       default: []
     },
     blockedApps: {
       type: Array,
-      default: ["com.google.android.youtube","com.android.calendar"]
+      default: ["com.google.android.youtube", "com.android.calendar"]
     },
+    batteryStatus: { type: String, default: "50%" },
     selectedBrowser: {
       type: Array,
       default: []
@@ -34,7 +35,7 @@ let schema: Schema = new Schema(
       type: Boolean,
       default: true
     },
-   
+
     checkNetWorkStatus: { type: Date, default: null },
     createdAt: { type: Date, default: null },
     updatedAt: { type: Date, default: null }

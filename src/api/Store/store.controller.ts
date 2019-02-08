@@ -430,6 +430,8 @@ export default class StoreController {
     next: NextFunction
   ) {
     try {
+      // FOR BATTERY STATUS -- REQ.BODY.STATUS=60%
+      // ADD THAT INTO UPDATE batteryStatus:`{REQ.BODY.STATUS}%`
       let storeId = req.body.storeId;
       const deviceId = req.body.deviceId;
       const groupName = req.body.groupName;
