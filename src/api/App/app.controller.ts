@@ -13,7 +13,7 @@ export default class AppController {
     try {
       //
       // Get data
-      let result = await Model.find().exec();
+      let result = await Model.distinct("appName").exec();
 
       //
       // Response
