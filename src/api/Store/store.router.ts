@@ -31,8 +31,8 @@ export class StoreRouter {
     // NOTE ->
     //These Routes Update store data by center,circle and store
     this.router.put("/:storeId", StoreController.updateStoreByStoreId);
-    this.router.put("/:centerId", StoreController.updateStoreByCenterId);
-    this.router.put("/:circleId", StoreController.updateStoreByCircleId);
+    this.router.put("/:centerId/center", StoreController.updateStoreByCenterId);
+    this.router.put("/:circleId/circle", StoreController.updateStoreByCircleId);
     // SEND MESSAGE TO STORE MANAGER
 
     this.router.post("/message", StoreController.message);
